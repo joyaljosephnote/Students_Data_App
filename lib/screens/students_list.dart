@@ -5,6 +5,34 @@ class students_list extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        title: const Text(
+          'Students Register',
+          textAlign: TextAlign.center,
+        ),
+        // actions: [Icon(showSearch(context: context, delegate: delegate))],
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(20.0),
+        child: Column(
+          children: [
+            TextField(
+              decoration: InputDecoration(
+                  labelText: 'Search',
+                  suffixIcon: Icon(Icons.search),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  filled: true,
+                  hintStyle: TextStyle(color: Colors.grey[400]),
+                  hintText: "Type student Name",
+                  fillColor: Colors.white70),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
