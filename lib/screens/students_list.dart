@@ -15,13 +15,13 @@ class students_list extends StatelessWidget {
         // actions: [Icon(showSearch(context: context, delegate: delegate))],
       ),
       body: Padding(
-        padding: EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
             TextField(
               decoration: InputDecoration(
                   labelText: 'Search',
-                  suffixIcon: Icon(Icons.search),
+                  suffixIcon: const Icon(Icons.search),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
