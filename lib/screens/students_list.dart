@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:students_app/database/functions/db_functions.dart';
+import 'package:students_app/model/data_model.dart';
 
 class StudentsList extends StatelessWidget {
   const StudentsList({super.key});
@@ -35,17 +37,26 @@ class StudentsList extends StatelessWidget {
                   fillColor: Colors.white70),
             ),
             Expanded(
-              child: ListView.separated(
-                  shrinkWrap: true,
-                  itemBuilder: (context, index) {
-                    return ListTile(
-                      title: Text('data'),
-                    );
-                  },
-                  separatorBuilder: (context, index) {
-                    return Divider();
-                  },
-                  itemCount: 10),
+              child: ValueListenableBuilder(
+                valueListenable: studentListNotifier,
+                builder: (BuildContext ctx, List<StudentModel> studentsList,
+                    Widget? child) {
+                  return ListView.separated(
+                    shrinkWrap: true,
+                    itemBuilder: (context, index) {
+                      final data = studentsList[index];
+                      return ListTile(
+                        title: Text(data.name),
+                        subtitle: Text(data.age),
+                      );
+                    },
+                    separatorBuilder: (context, index) {
+                      return Divider();
+                    },
+                    itemCount: studentsList.length,
+                  );
+                },
+              ),
             )
           ],
         ),

@@ -6,5 +6,6 @@ ValueNotifier<List<StudentModel>> studentListNotifier = ValueNotifier([]);
 
 void addStudent(StudentModel value) {
   studentListNotifier.value.add(value);
-  print(value.toString());
+  // print(value.toString());
+  studentListNotifier.notifyListeners();
 }
