@@ -13,8 +13,8 @@ class _HomeScreenState extends State<HomeScreen> {
   int _currentSelectedIndex = 0;
 
   final _pages = [
-    const students_list(),
-    const students_register(),
+    const StudentsList(),
+    const StudentsRegister(),
   ];
   @override
   Widget build(BuildContext context) {
