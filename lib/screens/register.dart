@@ -62,13 +62,18 @@ class StudentsRegister extends StatelessWidget {
                 children: [
                   ElevatedButton.icon(
                     onPressed: () {},
-                    icon: Icon(Icons.add),
-                    label: Text('Add Student'),
+                    icon: Icon(Icons.save),
+                    label: Text('Save'),
                   ),
                   ElevatedButton.icon(
                     onPressed: () {},
                     icon: Icon(Icons.edit_outlined),
-                    label: Text('Edit details'),
+                    label: Text('Edit'),
+                  ),
+                  ElevatedButton.icon(
+                    onPressed: () {},
+                    icon: Icon(Icons.delete),
+                    label: Text('Delete'),
                   ),
                 ],
               ),
@@ -77,5 +82,14 @@ class StudentsRegister extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<void> onAddStudententButtonClicked() async {
+    final _name = _nameController.text.trim();
+    final _age = _ageController.text.trim();
+    if (_name.isEmpty || _age.isEmpty) {
+      return;
+    }
+    print('$_name  $_age');
   }
 }

@@ -9,7 +9,7 @@ class StudentsList extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: const Text(
-          'Students Register',
+          'Students List',
         ),
         // actions: [Icon(showSearch(context: context, delegate: delegate))],
       ),
