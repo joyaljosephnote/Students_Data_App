@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
         },
         items: const [
           BottomNavigationBarItem(
-              icon: Icon(Icons.auto_stories_rounded), label: 'Register'),
+              icon: Icon(Icons.auto_stories_rounded), label: 'Students List'),
           BottomNavigationBarItem(
               icon: Icon(Icons.create), label: 'Add Student'),
         ],

@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:students_app/database/functions/db_functions.dart';
+import 'package:students_app/model/data_model.dart';
 
 class StudentsRegister extends StatelessWidget {
   StudentsRegister({super.key});
 
   final _nameController = TextEditingController();
   final _ageController = TextEditingController();
+  final _mobileNumberController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +49,7 @@ class StudentsRegister extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               TextField(
-                controller: _nameController,
+                controller: _mobileNumberController,
                 decoration: InputDecoration(
                     labelText: 'Mobile Number',
                     border: OutlineInputBorder(
@@ -61,7 +64,9 @@ class StudentsRegister extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   ElevatedButton.icon(
-                    onPressed: () {},
+                    onPressed: () {
+                      onAddStudententButtonClicked();
+                    },
                     icon: Icon(Icons.save),
                     label: Text('Save'),
                   ),
@@ -91,5 +96,9 @@ class StudentsRegister extends StatelessWidget {
       return;
     }
     print('$_name  $_age');
+
+    final _student = StudentModel(name: _name, age: _age);
+
+    addStudent(_student);
   }
 }

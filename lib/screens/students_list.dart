@@ -34,6 +34,19 @@ class StudentsList extends StatelessWidget {
                   hintText: "Type student Name",
                   fillColor: Colors.white70),
             ),
+            Expanded(
+              child: ListView.separated(
+                  shrinkWrap: true,
+                  itemBuilder: (context, index) {
+                    return ListTile(
+                      title: Text('data'),
+                    );
+                  },
+                  separatorBuilder: (context, index) {
+                    return Divider();
+                  },
+                  itemCount: 10),
+            )
           ],
         ),
       ),
