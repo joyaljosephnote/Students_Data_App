@@ -10,7 +10,6 @@ class StudentsList extends StatelessWidget {
         backgroundColor: Colors.black,
         title: const Text(
           'Students Register',
-          textAlign: TextAlign.center,
         ),
         // actions: [Icon(showSearch(context: context, delegate: delegate))],
       ),
