@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:students_app/database/functions/db_functions.dart';
 import 'package:students_app/screens/register.dart';
 import 'package:students_app/screens/students_list.dart';
 
@@ -18,6 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
   @override
   Widget build(BuildContext context) {
+    getAllStudents();
     return Scaffold(
       body: _pages[_currentSelectedIndex],
       bottomNavigationBar: BottomNavigationBar(
