@@ -19,6 +19,11 @@ class StudentsList extends StatelessWidget {
         child: Column(
           children: [
             TextField(
+              // onChanged: (value) {
+              //   setState(()){
+
+              //   }
+              // },
               decoration: InputDecoration(
                   labelText: 'Search',
                   suffixIcon: const Icon(Icons.search),

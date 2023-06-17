@@ -14,7 +14,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final _pages = [
     const StudentsList(),
-    const StudentsRegister(),
+    StudentsRegister(),
   ];
   @override
   Widget build(BuildContext context) {
