@@ -7,7 +7,8 @@ ValueNotifier<List<StudentModel>> studentListNotifier = ValueNotifier([]);
 
 Future<void> addStudent(StudentModel value) async {
   final studentDB = await Hive.openBox<StudentModel>('student_db');
-  await studentDB.add(value);
+  final _id = await studentDB.add(value);
+  value.id = _id;
   studentListNotifier.value.add(value);
   studentListNotifier.notifyListeners();
 }
@@ -17,4 +18,10 @@ Future<void> getAllStudents() async {
   studentListNotifier.value.clear();
   studentListNotifier.value.addAll(studentDB.values);
   studentListNotifier.notifyListeners();
+}
+
+Future<void> deleteStudent(int id) async {
+  final studentDB = await Hive.openBox<StudentModel>('student_db');
+  await studentDB.delete(id);
+  getAllStudents();
 }
