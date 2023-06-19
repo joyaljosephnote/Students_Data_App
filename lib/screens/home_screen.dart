@@ -14,8 +14,8 @@ class _HomeScreenState extends State<HomeScreen> {
   int _currentSelectedIndex = 0;
 
   final _pages = [
-    const StudentsList(),
     StudentsRegister(),
+    const StudentsList(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -34,9 +34,9 @@ class _HomeScreenState extends State<HomeScreen> {
         },
         items: const [
           BottomNavigationBarItem(
-              icon: Icon(Icons.auto_stories_rounded), label: 'Students List'),
-          BottomNavigationBarItem(
               icon: Icon(Icons.create), label: 'Add Student'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.auto_stories_rounded), label: 'Students List'),
         ],
       ),
     );

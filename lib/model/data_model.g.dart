@@ -17,9 +17,11 @@ class StudentModelAdapter extends TypeAdapter<StudentModel> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return StudentModel(
+      id: fields[0] as int?,
       name: fields[1] as String,
       age: fields[2] as String,
-      id: fields[0] as int?,
+      mobileNumber: fields[3] as String,
+      images: fields[4] as String,
     );
   }
 
@@ -32,7 +34,11 @@ class StudentModelAdapter extends TypeAdapter<StudentModel> {
       ..writeByte(1)
       ..write(obj.name)
       ..writeByte(2)
-      ..write(obj.age);
+      ..write(obj.age)
+      ..writeByte(3)
+      ..write(obj.mobileNumber)
+      ..writeByte(4)
+      ..write(obj.images);
   }
 
   @override

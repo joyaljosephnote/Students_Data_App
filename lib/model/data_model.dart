@@ -12,5 +12,16 @@ class StudentModel {
   @HiveField(2)
   final String age;
 
-  StudentModel({required this.name, required this.age, this.id});
+  @HiveField(3)
+  final String mobileNumber;
+
+  @HiveField(4)
+  final String images;
+
+  StudentModel(
+      {this.id,
+      required this.name,
+      required this.age,
+      required this.mobileNumber,
+      required this.images});
 }
