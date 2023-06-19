@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:students_app/database/functions/db_functions.dart';
 import 'package:students_app/model/data_model.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 XFile? images;
 
@@ -27,14 +28,23 @@ class _StudentsRegisterState extends State<StudentsRegister> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: const Text(
-          'Register',
-        ),
-      ),
+      backgroundColor: Colors.white60,
       body: ListView(
         children: [
+          const SizedBox(
+            height: 42,
+          ),
+          Align(
+            child: Text(
+              "Students Register",
+              textAlign: TextAlign.center,
+              style: GoogleFonts.staatliches(
+                  textStyle: const TextStyle(
+                color: Colors.black,
+                fontSize: 35,
+              )),
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: Form(
@@ -42,9 +52,12 @@ class _StudentsRegisterState extends State<StudentsRegister> {
               child: Column(
                 children: [
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      images = null;
+                      uploadImage(context);
+                    },
                     child: CircleAvatar(
-                      radius: 100,
+                      radius: 80,
                       backgroundColor: Colors.white,
                       child: ClipRRect(
                         child: Container(
@@ -74,13 +87,14 @@ class _StudentsRegisterState extends State<StudentsRegister> {
                     },
                     controller: _nameController,
                     decoration: InputDecoration(
-                        labelText: 'Full Name',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        filled: true,
-                        hintStyle: TextStyle(color: Colors.grey[400]),
-                        fillColor: Colors.white70),
+                      labelText: 'Full Name',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      filled: true,
+                      hintStyle: TextStyle(color: Colors.grey[400]),
+                      fillColor: Colors.white70,
+                    ),
                   ),
                   const SizedBox(height: 20),
                   TextFormField(
@@ -99,7 +113,7 @@ class _StudentsRegisterState extends State<StudentsRegister> {
                     decoration: InputDecoration(
                         labelText: 'Age',
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(20),
                         ),
                         filled: true,
                         hintStyle: TextStyle(color: Colors.grey[400]),
@@ -124,43 +138,24 @@ class _StudentsRegisterState extends State<StudentsRegister> {
                     decoration: InputDecoration(
                         labelText: 'Mobile Number',
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(20),
                         ),
                         filled: true,
                         hintStyle: TextStyle(color: Colors.grey[400]),
                         fillColor: Colors.white70),
                   ),
-                  const SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      ElevatedButton.icon(
-                        onPressed: () {
-                          images = null;
-                          uploadImage(context);
-                        },
-                        icon: const Icon(Icons.add_photo_alternate),
-                        label: const Text('Upload Image'),
-                      ),
-                      ElevatedButton.icon(
-                        onPressed: () {
-                          if (_FormKey.currentState!.validate()) {
-                            onAddStudententButtonClicked(context);
-                            textFeildClear();
-                          }
-                        },
-                        icon: const Icon(Icons.save),
-                        label: const Text('Save'),
-                      ),
-                      ElevatedButton.icon(
-                        onPressed: () {
-                          textFeildClear();
-                        },
-                        icon: const Icon(Icons.clear),
-                        label: const Text('Clear'),
-                      ),
-                    ],
-                  ),
+                  const SizedBox(height: 25),
+                  FloatingActionButton.extended(
+                    backgroundColor: const Color.fromARGB(255, 18, 195, 112),
+                    foregroundColor: Colors.white,
+                    onPressed: () {
+                      if (_FormKey.currentState!.validate()) {
+                        onAddStudententButtonClicked(context);
+                      }
+                    },
+                    // icon: Icon(Icons.save),
+                    label: const Text('SUBMIT REGISTRATION'),
+                  )
                 ],
               ),
             ),

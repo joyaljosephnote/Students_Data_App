@@ -14,7 +14,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int _currentSelectedIndex = 0;
 
   final _pages = [
-    StudentsRegister(),
+    const StudentsRegister(),
     const StudentsList(),
   ];
   @override
@@ -23,9 +23,9 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: _pages[_currentSelectedIndex],
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.black,
-        selectedItemColor: Colors.blue,
-        unselectedItemColor: Colors.white,
+        backgroundColor: Colors.white60,
+        selectedItemColor: Colors.black,
+        unselectedItemColor: const Color.fromARGB(255, 3, 127, 214),
         currentIndex: _currentSelectedIndex,
         onTap: (newIndex) {
           setState(() {
