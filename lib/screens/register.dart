@@ -66,17 +66,22 @@ class StudentsRegister extends StatelessWidget {
                   ElevatedButton.icon(
                     onPressed: () {
                       onAddStudententButtonClicked();
+                      _nameController.clear();
                     },
                     icon: const Icon(Icons.save),
                     label: const Text('Save'),
                   ),
                   ElevatedButton.icon(
-                    onPressed: () {},
+                    onPressed: () {
+                      _ageController.clear();
+                    },
                     icon: const Icon(Icons.edit_outlined),
                     label: const Text('Edit'),
                   ),
                   ElevatedButton.icon(
-                    onPressed: () {},
+                    onPressed: () {
+                      _mobileNumberController.clear();
+                    },
                     icon: const Icon(Icons.delete),
                     label: const Text('Delete'),
                   ),
