@@ -200,6 +200,7 @@ class _StudentsRegisterState extends State<StudentsRegister> {
           ],
         ),
       );
+      textFeildClear();
     }
   }
 

@@ -28,7 +28,7 @@ class StudentModelAdapter extends TypeAdapter<StudentModel> {
   @override
   void write(BinaryWriter writer, StudentModel obj) {
     writer
-      ..writeByte(3)
+      ..writeByte(5)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
