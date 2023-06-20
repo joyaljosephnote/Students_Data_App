@@ -53,6 +53,7 @@ class _StudentsListState extends State<StudentsList> {
                 height: 10,
               ),
               TextField(
+                controller: searchController,
                 decoration: InputDecoration(
                     labelText: 'Search',
                     suffixIcon: IconButton(
