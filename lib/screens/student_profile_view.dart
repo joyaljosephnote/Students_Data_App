@@ -43,9 +43,6 @@ class StudentProfileView extends StatelessWidget {
                           width: 10,
                           color: Colors.white54),
                       shape: BoxShape.circle,
-                      // borderRadius: const BorderRadius.all(
-                      //   Radius.circular(25),
-                      // ),
                       image: DecorationImage(
                           image: FileImage(File(Student.images)),
                           fit: BoxFit.cover)),
