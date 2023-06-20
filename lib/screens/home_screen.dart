@@ -24,8 +24,8 @@ class _HomeScreenState extends State<HomeScreen> {
       body: _pages[_currentSelectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white60,
-        selectedItemColor: Colors.black,
-        unselectedItemColor: const Color.fromARGB(255, 3, 127, 214),
+        unselectedItemColor: Colors.black,
+        selectedItemColor: const Color.fromARGB(255, 3, 127, 214),
         currentIndex: _currentSelectedIndex,
         onTap: (newIndex) {
           setState(() {
