@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable
+
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
@@ -7,6 +9,7 @@ ValueNotifier<List<StudentModel>> studentListNotifier = ValueNotifier([]);
 
 Future<void> addStudent(StudentModel value) async {
   final studentDB = await Hive.openBox<StudentModel>('student_data');
+  // ignore: no_leading_underscores_for_local_identifiers
   final _id = await studentDB.add(value);
   value.id = _id;
   // studentListNotifier.value.add(value);
@@ -18,6 +21,7 @@ Future<void> getAllStudents() async {
   final studentDB = await Hive.openBox<StudentModel>('student_data');
   studentListNotifier.value.clear();
   studentListNotifier.value.addAll(studentDB.values);
+  // ignore: invalid_use_of_visible_for_testing_member, invalid_use_of_protected_member
   studentListNotifier.notifyListeners();
 }
 
@@ -61,5 +65,6 @@ editstudent({
   studentModel.age = age;
   studentModel.mobileNumber = mobilePhone;
   studentModel.save();
+  // ignore: invalid_use_of_protected_member, invalid_use_of_visible_for_testing_member
   studentListNotifier.notifyListeners();
 }
