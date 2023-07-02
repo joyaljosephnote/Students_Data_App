@@ -13,6 +13,7 @@ TextEditingController searchController = TextEditingController();
 TextEditingController nameField = TextEditingController();
 TextEditingController ageField = TextEditingController();
 TextEditingController phoneField = TextEditingController();
+TextEditingController parentNameField = TextEditingController();
 bool isListEmpty = true;
 
 final formKey = GlobalKey<FormState>();
@@ -93,6 +94,7 @@ class _StudentsListState extends State<StudentsList> {
                                   onTap: () {
                                     Student = StudentModel(
                                       name: data.name,
+                                      parentName: data.parentName,
                                       age: data.age,
                                       mobileNumber: data.mobileNumber,
                                       images: data.images,
@@ -194,6 +196,7 @@ class _StudentsListState extends State<StudentsList> {
     nameField = TextEditingController(text: student.name);
     ageField = TextEditingController(text: student.age);
     phoneField = TextEditingController(text: student.mobileNumber);
+    parentNameField = TextEditingController(text: student.parentName);
 
     showModalBottomSheet(
       isScrollControlled: true,
@@ -260,6 +263,26 @@ class _StudentsListState extends State<StudentsList> {
                     controller: nameField,
                     decoration: InputDecoration(
                       labelText: 'Full Name',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      filled: true,
+                      hintStyle: TextStyle(color: Colors.grey[400]),
+                      fillColor: Colors.white70,
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  TextFormField(
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter your  full name';
+                      } else {
+                        return null;
+                      }
+                    },
+                    controller: parentNameField,
+                    decoration: InputDecoration(
+                      labelText: 'Parent Name',
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),
@@ -340,8 +363,9 @@ class _StudentsListState extends State<StudentsList> {
     final name = nameField.text;
     final age = ageField.text;
     final phone = phoneField.text;
+    final parentName = parentNameField.text;
 
-    if (name.isEmpty || age.isEmpty || phone.isEmpty) {
+    if (name.isEmpty || age.isEmpty || phone.isEmpty || parentName.isEmpty) {
       return;
     } else {
       Navigator.of(context).pop();
@@ -350,6 +374,7 @@ class _StudentsListState extends State<StudentsList> {
         name: nameField.text,
         age: ageField.text,
         mobilePhone: phoneField.text,
+        parentName: parentNameField.text,
       );
     }
   }

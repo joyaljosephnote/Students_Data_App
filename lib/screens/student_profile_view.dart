@@ -63,6 +63,20 @@ class StudentProfileView extends StatelessWidget {
                 ),
               ),
               Padding(
+                padding: const EdgeInsets.fromLTRB(60, 10, 10, 0),
+                child: Align(
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    "Name          :  ${Student.name}",
+                    style: GoogleFonts.redHatDisplay(
+                        textStyle: const TextStyle(
+                            color: Color.fromRGBO(255, 255, 255, 1)),
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+              Padding(
                 padding: const EdgeInsets.fromLTRB(60, 7, 10, 0),
                 child: Align(
                   alignment: Alignment.topLeft,

@@ -22,6 +22,8 @@ class _StudentsRegisterState extends State<StudentsRegister> {
 
   final _mobileNumberController = TextEditingController();
 
+  final _parentsNameController = TextEditingController();
+
   // ignore: non_constant_identifier_names
   final _FormKey = GlobalKey<FormState>();
 
@@ -88,6 +90,26 @@ class _StudentsRegisterState extends State<StudentsRegister> {
                     controller: _nameController,
                     decoration: InputDecoration(
                       labelText: 'Full Name',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      filled: true,
+                      hintStyle: TextStyle(color: Colors.grey[400]),
+                      fillColor: Colors.white70,
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  TextFormField(
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter your  full name';
+                      } else {
+                        return null;
+                      }
+                    },
+                    controller: _parentsNameController,
+                    decoration: InputDecoration(
+                      labelText: 'Parent Name',
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),
@@ -172,7 +194,12 @@ class _StudentsRegisterState extends State<StudentsRegister> {
     final _age = _ageController.text.trim();
     // ignore: no_leading_underscores_for_local_identifiers
     final _mobileNumber = _mobileNumberController.text.trim();
-    if (_name.isEmpty || _age.isEmpty || _mobileNumber.isEmpty) {
+    final _parentName = _parentsNameController.text.trim();
+
+    if (_name.isEmpty ||
+        _age.isEmpty ||
+        _mobileNumber.isEmpty ||
+        _parentName.isEmpty) {
       return;
     } else if (images == null) {
       imageError();
@@ -186,6 +213,7 @@ class _StudentsRegisterState extends State<StudentsRegister> {
           name: _name,
           age: _age,
           mobileNumber: _mobileNumber,
+          parentName: _parentName,
           images: images!.path);
 
       addStudent(_student);
@@ -262,5 +290,6 @@ class _StudentsRegisterState extends State<StudentsRegister> {
     _nameController.clear();
     _ageController.clear();
     _mobileNumberController.clear();
+    _parentsNameController.clear();
   }
 }

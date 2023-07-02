@@ -59,11 +59,13 @@ editstudent({
   required String name,
   required String age,
   required String mobilePhone,
+  required String parentName,
 }) async {
   final studentDB = await Hive.openBox<StudentModel>('Student_data');
   studentModel.name = name;
   studentModel.age = age;
   studentModel.mobileNumber = mobilePhone;
+  studentModel.parentName = parentName;
   studentModel.save();
   // ignore: invalid_use_of_protected_member, invalid_use_of_visible_for_testing_member
   studentListNotifier.notifyListeners();
