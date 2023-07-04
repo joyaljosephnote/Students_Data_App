@@ -17,6 +17,12 @@ Welcome to the Student Registration App! This project is a Flutter application d
 ## Screen Shorts
 
 ![Alt text](home.jpeg)
+![Alt text](camera.jpeg)
+![Alt text](Edit.jpeg)
+![Alt text](Delete.jpeg)
+![Alt text](Search.jpeg)
+![Alt text](<students list view.jpeg>)
+![Alt text](<detailed view.jpeg>)
 
 ## Get Started
 To get started with the Student Registration App, follow these steps:
