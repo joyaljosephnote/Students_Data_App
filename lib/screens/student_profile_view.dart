@@ -67,7 +67,7 @@ class StudentProfileView extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.topLeft,
                   child: Text(
-                    "Name          :  ${Student.name}",
+                    "Parent        :  ${Student.parentName}",
                     style: GoogleFonts.redHatDisplay(
                         textStyle: const TextStyle(
                             color: Color.fromRGBO(255, 255, 255, 1)),
