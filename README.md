@@ -14,6 +14,10 @@ Welcome to the Student Registration App! This project is a Flutter application d
 8. **Efficient Data Management:** All student information is stored securely and efficiently, allowing for easy access and management.
 9. **Flutter-Powered:** Built with Flutter, a popular cross-platform framework, the app ensures seamless performance on both Android and iOS devices.
 
+## Screen Shorts
+
+![Alt text](home.jpeg)
+
 ## Get Started
 To get started with the Student Registration App, follow these steps:
 1. Clone the repository to your local machine.
